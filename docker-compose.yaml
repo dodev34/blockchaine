@@ -1,0 +1,27 @@
+# https://tecadmin.net/install-go-on-debian/
+# https://blog.webnet.fr/implementation-blockchain-privee-geth/
+
+version: '3'
+
+services:
+  ubuntu:
+    build: ./docker/ubuntu
+    container_name: winterfield
+    volumes:
+      - ./docker/ubuntu/user:/home/winterfield
+    environment:
+      - "BLOCKCHAINE_NAME=test"
+      - "BLOCKCHAINE_IPC_PORT=54124"
+      - "BLOCKCHAINE_IPC_PATH=./blockchain/BetCoin/geth.ipc"
+      - "BLOCKCHAINE_DATA_DIR=./blockchain/BetCoin"
+    expose:
+      - 80
+      - 443
+      - 30303
+      - 54124
+    ports:
+      - "80:80"
+      - "443:443"
+      - "30303:30303"
+      - "54124:54124"
+    tty: true

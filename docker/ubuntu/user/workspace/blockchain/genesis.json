@@ -1,0 +1,15 @@
+{
+  "config": {
+    "chainId": 92310, // Identifiant unique de la chain
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
+  "difficulty": "0x400", // Notion de complexité des hash de notre blockchain
+  "gasLimit": "0x8000000", // Limite de fuel/gas pour les transaction
+  "alloc": { // OPTIONNEL
+    "0x1220be9f5201c7c00f3c13cc773e8696962b810b": { // Ici nous initialison un compte avec
+      "balance": "10000000000000000000000000000" // un certain nombre de wei(plus petite unité
+    } // de monnaie du protocole ethereum correspondant à 10^-18 ether
+  }
+}
